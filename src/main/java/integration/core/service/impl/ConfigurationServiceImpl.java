@@ -132,7 +132,7 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 		Optional<ComponentRoute> componentRouteOptional = componentRouteRepository.findById(componentRouteId);
 
 		if (componentRouteOptional == null) {
-			throw new ConfigurationException("Component does not exist for route");
+			throw new ConfigurationException("Component does not exist for route.  ComponentRouteId: " + componentRouteId);
 		}
 		
 		return componentRouteOptional.get();
@@ -143,7 +143,7 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 		ComponentRoute componentRoute = componentRouteRepository.getByComponentAndRouteId(componentId, routeId);
 
 		if (componentRoute == null) {
-			throw new ConfigurationException("Component does not exist for route");
+			throw new ConfigurationException("Component does not exist for route.  Component: " + componentId + ", routeId: " + routeId);
 		}
 		
 		return componentRoute;
@@ -155,7 +155,7 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 		ComponentRoute componentRoute = componentRouteRepository.getByComponentAndRouteId(componentId, routeId);
 
 		if (componentRoute == null) {
-			throw new ConfigurationException("Component does not exist for route");
+			throw new ConfigurationException("Component does not exist for route.  Component: " + componentId + ", routeId: " + routeId);
 		}
 		
 		ComponentRouteMapper mapper = new ComponentRouteMapper();
