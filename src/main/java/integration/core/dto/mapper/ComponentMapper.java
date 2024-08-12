@@ -9,7 +9,7 @@ import integration.core.dto.ComponentDto;
  * 
  * @author Brendan Douglas
  */
-public class ComponentMapper extends BaseMapper<ComponentDto, Component>{
+public class ComponentMapper extends BaseMapper<ComponentDto, Component> {
 
 	@Override
 	public ComponentDto doMapping(Component source) {
@@ -19,11 +19,11 @@ public class ComponentMapper extends BaseMapper<ComponentDto, Component>{
 		destination.setId(source.getId());
 		destination.setName(source.getName());
 		destination.setType(source.getType());
-		
+
 		for (ComponentProperty property : source.getProperties()) {
 			destination.addComponentProperty(property.getKey(), property.getValue());
 		}
-		
+
 		return destination;
 	}
 }

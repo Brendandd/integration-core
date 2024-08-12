@@ -11,6 +11,10 @@ Contains common functionality including:
 <br>
 <br>
 A lot needs to be done as this does not contain complete messaging functionality.
+<br>
+<br>
+Unit tests need to be written.
+
 
 
 

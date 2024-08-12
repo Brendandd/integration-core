@@ -8,14 +8,14 @@ import integration.core.dto.MessageDto;
  * 
  * @author Brendan Douglas
  */
-public class MessageMapper extends BaseMapper<MessageDto, Message>{
+public class MessageMapper extends BaseMapper<MessageDto, Message> {
 
 	@Override
 	public MessageDto doMapping(Message source) {
 		MessageDto destination = new MessageDto();
 		destination.setId(source.getId());
 		destination.setContent(source.getContent());
-		
+
 		return destination;
 	}
 }

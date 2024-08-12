@@ -14,13 +14,13 @@ public class ComponentRouteMapper extends BaseMapper<ComponentRouteDto, Componen
 	public ComponentRouteDto doMapping(ComponentRoute source) {
 		ComponentRouteDto destination = new ComponentRouteDto();
 		destination.setId(source.getId());
-		
+
 		ComponentMapper componentMapper = new ComponentMapper();
 		RouteMapper routeMapper = new RouteMapper();
 
 		destination.setComponent(componentMapper.doMapping(source.getComponent()));
 		destination.setRoute(routeMapper.doMapping(source.getRoute()));
-		
+
 		return destination;
 	}
 }

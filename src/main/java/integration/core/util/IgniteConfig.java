@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 /**
- * Config for Apache Ignite.  Ignite is being used as a distributed lock.
+ * Config for Apache Ignite. Ignite is being used as a distributed lock.
  * 
  * @author Brendan Douglas
  */

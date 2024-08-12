@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 /**
  * 
- * An event for a message.  Processed by the transactional outbox.
+ * An event for a message. Processed by the transactional outbox.
  * 
  * @author Brendan Douglas
  *
@@ -21,20 +21,17 @@ import jakarta.persistence.Table;
 public class MessageFlowEvent extends BaseIntegrationDomain {
 	private MessageFlowStep messageFlow;
 	private MessageFlowTypeEvent type;
-	
-	
+
 	@ManyToOne
 	@JoinColumn(name = "message_flow_id")
 	public MessageFlowStep getMessageFlow() {
 		return messageFlow;
 	}
 
-	
 	public void setMessageFlow(MessageFlowStep messageFlow) {
 		this.messageFlow = messageFlow;
 	}
-	
-	
+
 	@Column(name = "type")
 	@Enumerated(EnumType.STRING)
 	public MessageFlowTypeEvent getType() {

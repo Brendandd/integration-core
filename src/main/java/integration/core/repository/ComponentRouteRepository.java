@@ -8,8 +8,8 @@ import integration.core.domain.configuration.ComponentRoute;
 
 @Repository
 public interface ComponentRouteRepository extends CrudRepository<ComponentRoute, Long> {
-	
+
 	@Query(name = "getByComponentAndRouteId", value = "select cr from ComponentRoute cr where cr.component.id = ?1 and cr.route.id = ?2")
-	ComponentRoute getByComponentAndRouteId(long componentId, long routeId);	
-	
+	ComponentRoute getByComponentAndRouteId(long componentId, long routeId);
+
 }

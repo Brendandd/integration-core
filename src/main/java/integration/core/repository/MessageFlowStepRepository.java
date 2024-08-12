@@ -8,5 +8,4 @@ import integration.core.domain.messaging.MessageFlowStep;
 @Repository
 public interface MessageFlowStepRepository extends CrudRepository<MessageFlowStep, Long> {
 
-
 }

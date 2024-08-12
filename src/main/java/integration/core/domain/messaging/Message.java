@@ -16,54 +16,47 @@ import jakarta.persistence.Table;
  */
 @Entity
 @Table(name = "message")
-public class Message extends BaseIntegrationDomain  {
+public class Message extends BaseIntegrationDomain {
 	private String content;
-	private String headers;		
+	private String headers;
 	private String contentType;
-	
+
 	public Message() {
 
 	}
-	
+
 	@Column(name = "content")
 	public String getContent() {
 		return content;
 	}
-	
-	
+
 	public void setContent(String content) {
 		this.content = content;
 	}
 
-	
 	@Column(name = "headers")
 	public String getHeaders() {
 		return headers;
 	}
-	
-	
+
 	public void setHeaders(String headers) {
 		this.headers = headers;
 	}
 
-	
 	@Override
 	public String toString() {
 		return content;
 	}
 
-	
 	@Column(name = "content_type")
 	public String getContentType() {
 		return contentType;
 	}
-	
-	
+
 	public void setContentType(String contentType) {
 		this.contentType = contentType;
 	}
 
-	
 	/**
 	 * Adds a header to this message.
 	 * 
@@ -71,40 +64,37 @@ public class Message extends BaseIntegrationDomain  {
 	 * @param value
 	 */
 	public void addHeader(String key, String value) {
-		Map<String, Object>headers = Utils.convertFromJSON(this.headers);
+		Map<String, Object> headers = Utils.convertFromJSON(this.headers);
 		headers.put(key, value);
-		
+
 		setHeaders(Utils.convertToJSON(headers));
 	}
 
-	
 	/**
 	 * Removes a header from this message.
 	 * 
 	 * @param key
 	 */
 	public void removeHeader(String key) {
-		Map<String, Object>headers = Utils.convertFromJSON(this.headers);
-		
+		Map<String, Object> headers = Utils.convertFromJSON(this.headers);
+
 		if (headers.containsKey(key)) {
 			headers.remove(key);
-			setHeaders(Utils.convertToJSON(headers));	
-		}		
+			setHeaders(Utils.convertToJSON(headers));
+		}
 	}
 
-	
 	/**
-	 * Gets a header from this message if it exists.  Null if it doesn't exist.
+	 * Gets a header from this message if it exists. Null if it doesn't exist.
 	 * 
 	 * @param key
 	 */
 	public String getHeader(String key) {
-		Map<String, Object>headers = Utils.convertFromJSON(this.headers);
-		
-		return (String)headers.get(key);
+		Map<String, Object> headers = Utils.convertFromJSON(this.headers);
+
+		return (String) headers.get(key);
 	}
 
-	
 	/**
 	 * Checks to see if a header exists on this message.
 	 * 
@@ -112,8 +102,8 @@ public class Message extends BaseIntegrationDomain  {
 	 * @return
 	 */
 	public boolean doesHeaderExist(String key) {
-		Map<String, Object>headers = Utils.convertFromJSON(this.headers);
-		
-		return headers.containsKey(key);		
+		Map<String, Object> headers = Utils.convertFromJSON(this.headers);
+
+		return headers.containsKey(key);
 	}
 }

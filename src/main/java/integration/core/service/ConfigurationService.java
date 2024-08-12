@@ -12,7 +12,7 @@ import integration.core.exception.ConfigurationException;
  *
  */
 public interface ConfigurationService {
-	
+
 	/**
 	 * Retrieve a route by name.
 	 * 
@@ -22,26 +22,21 @@ public interface ConfigurationService {
 	 */
 	RouteDto getRouteByName(String name) throws ConfigurationException;
 
-	
 	/**
 	 * Retrieves all the routes.
 	 * 
 	 * @return
 	 * @throws ConfigurationException
 	 */
-	List<RouteDto>getAllRoutes() throws ConfigurationException;
-	
-	boolean isInboundRunning(long componentRouteId) throws ConfigurationException;
-	
-	
-	boolean isInboundStopped(long componentRouteId) throws ConfigurationException;
-	
-	
-	boolean isOutboundRunning(long componentRouteId) throws ConfigurationException;
-	
-	
-	boolean isOutboundStopped(long componentRouteId) throws ConfigurationException;
+	List<RouteDto> getAllRoutes() throws ConfigurationException;
 
+	boolean isInboundRunning(long componentRouteId) throws ConfigurationException;
+
+	boolean isInboundStopped(long componentRouteId) throws ConfigurationException;
+
+	boolean isOutboundRunning(long componentRouteId) throws ConfigurationException;
+
+	boolean isOutboundStopped(long componentRouteId) throws ConfigurationException;
 
 	/**
 	 * Gets a component by name.

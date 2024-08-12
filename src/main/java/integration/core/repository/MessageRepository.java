@@ -8,5 +8,4 @@ import integration.core.domain.messaging.Message;
 @Repository
 public interface MessageRepository extends CrudRepository<Message, Long> {
 
-
 }

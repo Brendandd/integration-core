@@ -8,5 +8,4 @@ import integration.core.domain.messaging.MessageFlowGroup;
 @Repository
 public interface MessageFlowRepository extends CrudRepository<MessageFlowGroup, Long> {
 
-
 }

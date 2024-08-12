@@ -25,29 +25,25 @@ public class BaseIntegrationDomain {
 	protected Date createdDate;
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	public long getId() {
 		return id;
 	}
 
-	
 	public void setId(long id) {
 		this.id = id;
 	}
-
 
 	@Column(name = "created_by_user_id")
 	public String getCreatedUserId() {
 		return createdUserId;
 	}
 
-
 	public void setCreatedUserId(String createdUserId) {
 		this.createdUserId = createdUserId;
 	}
-	
-	
+
 	@Column(name = "created_date")
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
@@ -55,7 +51,6 @@ public class BaseIntegrationDomain {
 		return createdDate;
 	}
 
-	
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}

@@ -8,14 +8,14 @@ import integration.core.dto.MessageFlowEventDto;
  * 
  * @author Brendan Douglas
  */
-public class MessageFlowEventMapper extends BaseMapper<MessageFlowEventDto, MessageFlowEvent>{
+public class MessageFlowEventMapper extends BaseMapper<MessageFlowEventDto, MessageFlowEvent> {
 
 	@Override
 	public MessageFlowEventDto doMapping(MessageFlowEvent source) {
 		MessageFlowEventDto destination = new MessageFlowEventDto();
 		destination.setMessageFlowId(source.getMessageFlow().getId());
 		destination.setId(source.getId());
-		
+
 		return destination;
 	}
 }
