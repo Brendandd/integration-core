@@ -18,25 +18,25 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "message_flow_group")
 public class MessageFlowGroup extends BaseIntegrationDomain {
-	private List<MessageFlowStep> messageFlowSteps = new ArrayList<>();
+    private List<MessageFlowStep> messageFlowSteps = new ArrayList<>();
 
-	@OneToMany(mappedBy = "messageFlowGroup", cascade = CascadeType.ALL)
-	public List<MessageFlowStep> getMessageFlowSteps() {
-		return messageFlowSteps;
-	}
+    @OneToMany(mappedBy = "messageFlowGroup", cascade = CascadeType.ALL)
+    public List<MessageFlowStep> getMessageFlowSteps() {
+        return messageFlowSteps;
+    }
 
-	public void setMessageFlowSteps(List<MessageFlowStep> messageFlowSteps) {
-		this.messageFlowSteps = messageFlowSteps;
-	}
+    public void setMessageFlowSteps(List<MessageFlowStep> messageFlowSteps) {
+        this.messageFlowSteps = messageFlowSteps;
+    }
 
-	/**
-	 * Adds a step to this message flow.
-	 * 
-	 * @param messageFlowStep
-	 */
-	public void addMessageFlowStep(MessageFlowStep messageFlowStep) {
-		this.messageFlowSteps.add(messageFlowStep);
+    /**
+     * Adds a step to this message flow.
+     * 
+     * @param messageFlowStep
+     */
+    public void addMessageFlowStep(MessageFlowStep messageFlowStep) {
+        this.messageFlowSteps.add(messageFlowStep);
 
-		messageFlowStep.setMessageFlowGroup(this);
-	}
+        messageFlowStep.setMessageFlowGroup(this);
+    }
 }

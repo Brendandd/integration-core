@@ -24,77 +24,77 @@ import jakarta.persistence.Transient;
 @Entity
 @Table(name = "component")
 public class Component extends BaseIntegrationDomain {
-	private String name;
-	private String description;
-	private ComponentType type;
-	private ComponentCategory category;
-	private List<ComponentProperty> properties = new ArrayList<>();
-	private List<ComponentRoute> components = new ArrayList<ComponentRoute>();
+    private String name;
+    private String description;
+    private ComponentType type;
+    private ComponentCategory category;
+    private List<ComponentProperty> properties = new ArrayList<>();
+    private List<ComponentRoute> components = new ArrayList<ComponentRoute>();
 
-	@OneToMany(mappedBy = "component", cascade = CascadeType.ALL)
-	public List<ComponentProperty> getProperties() {
-		return properties;
-	}
+    @OneToMany(mappedBy = "component", cascade = CascadeType.ALL)
+    public List<ComponentProperty> getProperties() {
+        return properties;
+    }
 
-	public void setProperties(List<ComponentProperty> properties) {
-		this.properties = properties;
-	}
+    public void setProperties(List<ComponentProperty> properties) {
+        this.properties = properties;
+    }
 
-	@Column(name = "name")
-	public String getName() {
-		return name;
-	}
+    @Column(name = "name")
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	@Column(name = "description")
-	public String getDescription() {
-		return description;
-	}
+    @Column(name = "description")
+    public String getDescription() {
+        return description;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	@Transient
-	public String getProperty(String key) {
-		for (ComponentProperty property : this.getProperties()) {
-			if (property.getKey().equalsIgnoreCase(key)) {
-				return key;
-			}
-		}
+    @Transient
+    public String getProperty(String key) {
+        for (ComponentProperty property : this.getProperties()) {
+            if (property.getKey().equalsIgnoreCase(key)) {
+                return key;
+            }
+        }
 
-		throw new ConfigurationException("Property not found");
-	}
+        throw new ConfigurationException("Property not found");
+    }
 
-	@ManyToOne
-	@JoinColumn(name = "component_type_id", nullable = false)
-	public ComponentType getType() {
-		return type;
-	}
+    @ManyToOne
+    @JoinColumn(name = "component_type_id", nullable = false)
+    public ComponentType getType() {
+        return type;
+    }
 
-	@ManyToOne
-	@JoinColumn(name = "component_category_id", nullable = false)
-	public ComponentCategory getCategory() {
-		return category;
-	}
+    @ManyToOne
+    @JoinColumn(name = "component_category_id", nullable = false)
+    public ComponentCategory getCategory() {
+        return category;
+    }
 
-	public void setCategory(ComponentCategory category) {
-		this.category = category;
-	}
+    public void setCategory(ComponentCategory category) {
+        this.category = category;
+    }
 
-	public void setType(ComponentType type) {
-		this.type = type;
-	}
+    public void setType(ComponentType type) {
+        this.type = type;
+    }
 
-	@OneToMany(mappedBy = "component", cascade = CascadeType.ALL)
-	public List<ComponentRoute> getComponents() {
-		return components;
-	}
+    @OneToMany(mappedBy = "component", cascade = CascadeType.ALL)
+    public List<ComponentRoute> getComponents() {
+        return components;
+    }
 
-	public void setComponents(List<ComponentRoute> components) {
-		this.components = components;
-	}
+    public void setComponents(List<ComponentRoute> components) {
+        this.components = components;
+    }
 }

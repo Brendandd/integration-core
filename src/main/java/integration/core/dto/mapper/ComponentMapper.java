@@ -11,19 +11,19 @@ import integration.core.dto.ComponentDto;
  */
 public class ComponentMapper extends BaseMapper<ComponentDto, Component> {
 
-	@Override
-	public ComponentDto doMapping(Component source) {
-		ComponentDto destination = new ComponentDto();
-		destination.setCategory(source.getCategory());
-		destination.setDescription(source.getDescription());
-		destination.setId(source.getId());
-		destination.setName(source.getName());
-		destination.setType(source.getType());
+    @Override
+    public ComponentDto doMapping(Component source) {
+        ComponentDto destination = new ComponentDto();
+        destination.setCategory(source.getCategory());
+        destination.setDescription(source.getDescription());
+        destination.setId(source.getId());
+        destination.setName(source.getName());
+        destination.setType(source.getType());
 
-		for (ComponentProperty property : source.getProperties()) {
-			destination.addComponentProperty(property.getKey(), property.getValue());
-		}
+        for (ComponentProperty property : source.getProperties()) {
+            destination.addComponentProperty(property.getKey(), property.getValue());
+        }
 
-		return destination;
-	}
+        return destination;
+    }
 }

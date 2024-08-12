@@ -10,14 +10,14 @@ import integration.core.dto.RouteDto;
  */
 public class RouteMapper extends BaseMapper<RouteDto, Route> {
 
-	@Override
-	public RouteDto doMapping(Route source) {
-		RouteDto destination = new RouteDto();
+    @Override
+    public RouteDto doMapping(Route source) {
+        RouteDto destination = new RouteDto();
 
-		destination.setDescription(source.getDescription());
-		destination.setId(source.getId());
-		destination.setName(source.getName());
+        destination.setDescription(source.getDescription());
+        destination.setId(source.getId());
+        destination.setName(source.getName());
 
-		return destination;
-	}
+        return destination;
+    }
 }

@@ -19,35 +19,35 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "route")
 public class Route extends BaseIntegrationDomain {
-	private String name;
-	private String description;
+    private String name;
+    private String description;
 
-	private List<ComponentRoute> components = new ArrayList<ComponentRoute>();
+    private List<ComponentRoute> components = new ArrayList<ComponentRoute>();
 
-	@Column(name = "name")
-	public String getName() {
-		return name;
-	}
+    @Column(name = "name")
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	@Column(name = "description")
-	public String getDescription() {
-		return description;
-	}
+    @Column(name = "description")
+    public String getDescription() {
+        return description;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	@OneToMany(mappedBy = "route", cascade = CascadeType.ALL)
-	public List<ComponentRoute> getComponents() {
-		return components;
-	}
+    @OneToMany(mappedBy = "route", cascade = CascadeType.ALL)
+    public List<ComponentRoute> getComponents() {
+        return components;
+    }
 
-	public void setComponents(List<ComponentRoute> components) {
-		this.components = components;
-	}
+    public void setComponents(List<ComponentRoute> components) {
+        this.components = components;
+    }
 }

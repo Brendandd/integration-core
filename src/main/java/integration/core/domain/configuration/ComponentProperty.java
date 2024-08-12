@@ -20,65 +20,65 @@ import jakarta.persistence.TemporalType;
 @Entity
 @Table(name = "component_property")
 public class ComponentProperty extends BaseIntegrationDomain {
-	private String key;
-	private String value;
-	private Component component;
-	private Date startDate;
-	private Date endDate;
+    private String key;
+    private String value;
+    private Component component;
+    private Date startDate;
+    private Date endDate;
 
-	private ComponentProperty() {
-	}
+    private ComponentProperty() {
+    }
 
-	public ComponentProperty(String key, String value) {
-		this.key = key;
-		this.value = value;
-	}
+    public ComponentProperty(String key, String value) {
+        this.key = key;
+        this.value = value;
+    }
 
-	@Column(name = "key")
-	public String getKey() {
-		return key;
-	}
+    @Column(name = "key")
+    public String getKey() {
+        return key;
+    }
 
-	public void setKey(String key) {
-		this.key = key;
-	}
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-	@Column(name = "value")
-	public String getValue() {
-		return value;
-	}
+    @Column(name = "value")
+    public String getValue() {
+        return value;
+    }
 
-	public void setValue(String value) {
-		this.value = value;
-	}
+    public void setValue(String value) {
+        this.value = value;
+    }
 
-	@ManyToOne
-	@JoinColumn(name = "component_id")
-	public Component getComponent() {
-		return component;
-	}
+    @ManyToOne
+    @JoinColumn(name = "component_id")
+    public Component getComponent() {
+        return component;
+    }
 
-	public void setComponent(Component component) {
-		this.component = component;
-	}
+    public void setComponent(Component component) {
+        this.component = component;
+    }
 
-	@Column(name = "start_date")
-	@Temporal(TemporalType.TIMESTAMP)
-	public Date getStartDate() {
-		return startDate;
-	}
+    @Column(name = "start_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getStartDate() {
+        return startDate;
+    }
 
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
 
-	@Column(name = "end_date")
-	@Temporal(TemporalType.TIMESTAMP)
-	public Date getEndDate() {
-		return endDate;
-	}
+    @Column(name = "end_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getEndDate() {
+        return endDate;
+    }
 
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
 }

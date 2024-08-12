@@ -13,5 +13,5 @@ import integration.core.dto.BaseDto;
  */
 public abstract class BaseMapper<T extends BaseDto, U extends BaseIntegrationDomain> {
 
-	public abstract T doMapping(U source);
+    public abstract T doMapping(U source);
 }

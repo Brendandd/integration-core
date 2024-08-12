@@ -20,38 +20,38 @@ import jakarta.persistence.TemporalType;
  */
 @MappedSuperclass
 public class BaseIntegrationDomain {
-	protected long id;
-	protected String createdUserId;
-	protected Date createdDate;
+    protected long id;
+    protected String createdUserId;
+    protected Date createdDate;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	public long getId() {
-		return id;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    public long getId() {
+        return id;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	@Column(name = "created_by_user_id")
-	public String getCreatedUserId() {
-		return createdUserId;
-	}
+    @Column(name = "created_by_user_id")
+    public String getCreatedUserId() {
+        return createdUserId;
+    }
 
-	public void setCreatedUserId(String createdUserId) {
-		this.createdUserId = createdUserId;
-	}
+    public void setCreatedUserId(String createdUserId) {
+        this.createdUserId = createdUserId;
+    }
 
-	@Column(name = "created_date")
-	@Temporal(TemporalType.TIMESTAMP)
-	@CreationTimestamp
-	public Date getCreatedDate() {
-		return createdDate;
-	}
+    @Column(name = "created_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    @CreationTimestamp
+    public Date getCreatedDate() {
+        return createdDate;
+    }
 
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
-	}
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
 }

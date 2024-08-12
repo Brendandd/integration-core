@@ -10,17 +10,17 @@ import integration.core.dto.ComponentRouteDto;
  */
 public class ComponentRouteMapper extends BaseMapper<ComponentRouteDto, ComponentRoute> {
 
-	@Override
-	public ComponentRouteDto doMapping(ComponentRoute source) {
-		ComponentRouteDto destination = new ComponentRouteDto();
-		destination.setId(source.getId());
+    @Override
+    public ComponentRouteDto doMapping(ComponentRoute source) {
+        ComponentRouteDto destination = new ComponentRouteDto();
+        destination.setId(source.getId());
 
-		ComponentMapper componentMapper = new ComponentMapper();
-		RouteMapper routeMapper = new RouteMapper();
+        ComponentMapper componentMapper = new ComponentMapper();
+        RouteMapper routeMapper = new RouteMapper();
 
-		destination.setComponent(componentMapper.doMapping(source.getComponent()));
-		destination.setRoute(routeMapper.doMapping(source.getRoute()));
+        destination.setComponent(componentMapper.doMapping(source.getComponent()));
+        destination.setRoute(routeMapper.doMapping(source.getRoute()));
 
-		return destination;
-	}
+        return destination;
+    }
 }

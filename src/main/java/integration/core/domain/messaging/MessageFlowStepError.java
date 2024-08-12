@@ -15,25 +15,25 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "message_flow_step_error")
 public class MessageFlowStepError extends BaseIntegrationDomain {
-	private MessageFlowStep messageFlowStep;
-	private String description;
+    private MessageFlowStep messageFlowStep;
+    private String description;
 
-	@ManyToOne
-	@JoinColumn(name = "message_flow_step_id")
-	public MessageFlowStep getMessageFlowStep() {
-		return messageFlowStep;
-	}
+    @ManyToOne
+    @JoinColumn(name = "message_flow_step_id")
+    public MessageFlowStep getMessageFlowStep() {
+        return messageFlowStep;
+    }
 
-	public void setMessageFlowStep(MessageFlowStep messageFlowStep) {
-		this.messageFlowStep = messageFlowStep;
-	}
+    public void setMessageFlowStep(MessageFlowStep messageFlowStep) {
+        this.messageFlowStep = messageFlowStep;
+    }
 
-	@Column(name = "description")
-	public String getDescription() {
-		return description;
-	}
+    @Column(name = "description")
+    public String getDescription() {
+        return description;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

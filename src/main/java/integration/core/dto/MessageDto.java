@@ -6,15 +6,15 @@ package integration.core.dto;
  * @author Brendan Douglas
  */
 public class MessageDto extends BaseDto {
-	private static final long serialVersionUID = -5868048360433222690L;
+    private static final long serialVersionUID = -5868048360433222690L;
 
-	private String content;
+    private String content;
 
-	public String getContent() {
-		return content;
-	}
+    public String getContent() {
+        return content;
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    public void setContent(String content) {
+        this.content = content;
+    }
 }

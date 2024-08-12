@@ -10,14 +10,14 @@ import integration.core.dto.MessageFlowStepDto;
  */
 public class MessageFlowStepMapper extends BaseMapper<MessageFlowStepDto, MessageFlowStep> {
 
-	@Override
-	public MessageFlowStepDto doMapping(MessageFlowStep source) {
-		MessageFlowStepDto destination = new MessageFlowStepDto();
+    @Override
+    public MessageFlowStepDto doMapping(MessageFlowStep source) {
+        MessageFlowStepDto destination = new MessageFlowStepDto();
 
-		destination.setId(source.getId());
-		destination.setMessageContent(source.getMessage().getContent());
-		destination.setMessageFlowId(source.getMessageFlowGroup().getId());
+        destination.setId(source.getId());
+        destination.setMessageContent(source.getMessage().getContent());
+        destination.setMessageFlowId(source.getMessageFlowGroup().getId());
 
-		return destination;
-	}
+        return destination;
+    }
 }

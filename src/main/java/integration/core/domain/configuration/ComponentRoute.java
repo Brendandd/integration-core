@@ -27,90 +27,90 @@ import jakarta.persistence.Table;
 @Table(name = "component_route")
 public class ComponentRoute extends BaseIntegrationDomain {
 
-	private ComponentState inboundState;
+    private ComponentState inboundState;
 
-	private ComponentState outboundState;
+    private ComponentState outboundState;
 
-	private List<MessageFlowStep> messageFlows = new ArrayList<>();
+    private List<MessageFlowStep> messageFlows = new ArrayList<>();
 
-	private Component component;
+    private Component component;
 
-	private Route route;
+    private Route route;
 
-	private ExternalSystem externalSystem;
+    private ExternalSystem externalSystem;
 
-	@Column(name = "inbound_state")
-	@Enumerated(EnumType.STRING)
-	public ComponentState getInboundState() {
-		return inboundState;
-	}
+    @Column(name = "inbound_state")
+    @Enumerated(EnumType.STRING)
+    public ComponentState getInboundState() {
+        return inboundState;
+    }
 
-	public void setInboundState(ComponentState inboundState) {
-		this.inboundState = inboundState;
-	}
+    public void setInboundState(ComponentState inboundState) {
+        this.inboundState = inboundState;
+    }
 
-	@Column(name = "outbound_state")
-	@Enumerated(EnumType.STRING)
-	public ComponentState getOutboundState() {
-		return outboundState;
-	}
+    @Column(name = "outbound_state")
+    @Enumerated(EnumType.STRING)
+    public ComponentState getOutboundState() {
+        return outboundState;
+    }
 
-	public void setOutboundState(ComponentState outboundState) {
-		this.outboundState = outboundState;
-	}
+    public void setOutboundState(ComponentState outboundState) {
+        this.outboundState = outboundState;
+    }
 
-	@OneToMany(mappedBy = "componentRoute", cascade = CascadeType.ALL)
-	public List<MessageFlowStep> getMessageFlows() {
-		return messageFlows;
-	}
+    @OneToMany(mappedBy = "componentRoute", cascade = CascadeType.ALL)
+    public List<MessageFlowStep> getMessageFlows() {
+        return messageFlows;
+    }
 
-	public void setMessageFlows(List<MessageFlowStep> messageFlows) {
-		this.messageFlows = messageFlows;
-	}
+    public void setMessageFlows(List<MessageFlowStep> messageFlows) {
+        this.messageFlows = messageFlows;
+    }
 
-	/**
-	 * Has the supplied message flow id already been processed by this component.
-	 * 
-	 * @param messageFlowId
-	 * @return
-	 */
-	public boolean hasAlreadyBeenProcessed(long messageFlowId) {
-		for (MessageFlowStep step : messageFlows) {
-			if (step.getId() == messageFlowId) {
-				return true;
-			}
-		}
+    /**
+     * Has the supplied message flow id already been processed by this component.
+     * 
+     * @param messageFlowId
+     * @return
+     */
+    public boolean hasAlreadyBeenProcessed(long messageFlowId) {
+        for (MessageFlowStep step : messageFlows) {
+            if (step.getId() == messageFlowId) {
+                return true;
+            }
+        }
 
-		return false;
-	}
+        return false;
+    }
 
-	@ManyToOne
-	@JoinColumn(name = "component_id", nullable = false)
-	public Component getComponent() {
-		return component;
-	}
+    @ManyToOne
+    @JoinColumn(name = "component_id", nullable = false)
+    public Component getComponent() {
+        return component;
+    }
 
-	@ManyToOne
-	@JoinColumn(name = "route_id", nullable = false)
-	public Route getRoute() {
-		return route;
-	}
+    @ManyToOne
+    @JoinColumn(name = "route_id", nullable = false)
+    public Route getRoute() {
+        return route;
+    }
 
-	public void setComponent(Component component) {
-		this.component = component;
-	}
+    public void setComponent(Component component) {
+        this.component = component;
+    }
 
-	public void setRoute(Route route) {
-		this.route = route;
-	}
+    public void setRoute(Route route) {
+        this.route = route;
+    }
 
-	@ManyToOne
-	@JoinColumn(name = "external_system_id", nullable = false)
-	public ExternalSystem getExternalSystem() {
-		return externalSystem;
-	}
+    @ManyToOne
+    @JoinColumn(name = "external_system_id", nullable = false)
+    public ExternalSystem getExternalSystem() {
+        return externalSystem;
+    }
 
-	public void setExternalSystem(ExternalSystem externalSystem) {
-		this.externalSystem = externalSystem;
-	}
+    public void setExternalSystem(ExternalSystem externalSystem) {
+        this.externalSystem = externalSystem;
+    }
 }

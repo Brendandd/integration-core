@@ -9,7 +9,7 @@ import integration.core.domain.configuration.Component;
 @Repository
 public interface ComponentRepository extends CrudRepository<Component, Long> {
 
-	@Query(name = "getByName", value = "select c from Component c where c.name = ?1")
-	Component getByName(String name);
+    @Query(name = "getByName", value = "select c from Component c where c.name = ?1")
+    Component getByName(String name);
 
 }

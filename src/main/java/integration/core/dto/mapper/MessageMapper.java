@@ -10,12 +10,12 @@ import integration.core.dto.MessageDto;
  */
 public class MessageMapper extends BaseMapper<MessageDto, Message> {
 
-	@Override
-	public MessageDto doMapping(Message source) {
-		MessageDto destination = new MessageDto();
-		destination.setId(source.getId());
-		destination.setContent(source.getContent());
+    @Override
+    public MessageDto doMapping(Message source) {
+        MessageDto destination = new MessageDto();
+        destination.setId(source.getId());
+        destination.setContent(source.getContent());
 
-		return destination;
-	}
+        return destination;
+    }
 }
