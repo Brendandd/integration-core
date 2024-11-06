@@ -1,23 +1,16 @@
 # Integration Core
 
-Contains common functionality including:
+This module contains shared code used across all areas of the integration engine and is still under development. Current features include:
+
 <ol>
-	<li>Domain model</li>
-	<li>JPAcrepositories</li>
-	<li>Data Transfer Objects (DTOs)</li>
-	<li>Domain model objects to DTO mappers</li>
+    <li>Domain model</li>
+    <li>JPA Repositories</li>
+    <li>Data Transfer Objects (DTOs)</li>
+    <li>Domain model to DTO mappers</li>
 </ol>
 
-<br>
-<br>
-A lot needs to be done as this does not contain complete messaging functionality.
-<br>
-<br>
-Unit tests need to be written.
 
-
-
-
+Unit tests still need to be written.
 
 
 
